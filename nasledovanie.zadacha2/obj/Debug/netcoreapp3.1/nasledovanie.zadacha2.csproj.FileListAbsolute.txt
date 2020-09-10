@@ -1,0 +1,13 @@
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\bin\Debug\netcoreapp3.1\nasledovanie.zadacha2.exe
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\bin\Debug\netcoreapp3.1\nasledovanie.zadacha2.deps.json
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\bin\Debug\netcoreapp3.1\nasledovanie.zadacha2.runtimeconfig.json
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\bin\Debug\netcoreapp3.1\nasledovanie.zadacha2.runtimeconfig.dev.json
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\bin\Debug\netcoreapp3.1\nasledovanie.zadacha2.dll
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\bin\Debug\netcoreapp3.1\nasledovanie.zadacha2.pdb
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\obj\Debug\netcoreapp3.1\nasledovanie.zadacha2.csprojAssemblyReference.cache
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\obj\Debug\netcoreapp3.1\nasledovanie.zadacha2.AssemblyInfoInputs.cache
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\obj\Debug\netcoreapp3.1\nasledovanie.zadacha2.AssemblyInfo.cs
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\obj\Debug\netcoreapp3.1\nasledovanie.zadacha2.csproj.CoreCompileInputs.cache
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\obj\Debug\netcoreapp3.1\nasledovanie.zadacha2.dll
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\obj\Debug\netcoreapp3.1\nasledovanie.zadacha2.pdb
+C:\Users\Araz\source\repos\ConsoleApp1\nasledovanie.zadacha2\obj\Debug\netcoreapp3.1\nasledovanie.zadacha2.genruntimeconfig.cache
