@@ -1,5 +1,4 @@
-﻿using System;
-using System.Security.Cryptography.X509Certificates;
+using System;
 
 namespace zadacha6
 {
@@ -24,15 +23,19 @@ namespace zadacha6
     class Student                                                                              // KLASS STUDENT
 
     {
-        public string lastname;                                                                // POLYA 
+       public  string lastname;                                                                // POLYA 
 
         public int course;
 
-        public int numbook;
+        private int numbook;
+
+        public int validation;
 
 
+        public string Lastname  {  set; get; }
 
-        public virtual int Course
+
+        public virtual  int Course
         {
 
             set
@@ -66,6 +69,27 @@ namespace zadacha6
 
 
 
+
+        public int Numbook
+        {
+
+         set {
+
+                value = numbook;
+            }
+
+            get
+            {
+
+                return numbook;
+            }
+
+
+
+
+        }
+
+
         public Student()
         {
 
@@ -75,23 +99,47 @@ namespace zadacha6
         public Student(string lastname, int course, int numbook)                                        // KONSTRUKTOR STUDENTA 
         {
 
-            this.lastname = lastname;
-            Course = course;
-            this.numbook = numbook;
-
-        }
-        public void PrintS()
-        {
-            Console.Write("Lastname of Student: ");
-            lastname = (Console.ReadLine());
-            Console.WriteLine("Course: ");
-            course = int.Parse(Console.ReadLine());
-            Console.WriteLine("Numbook: ");
-            numbook = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-        }
-
+           this.lastname = lastname;
+           Course = course;
+           this.numbook = numbook;
         
+        }
+
+
+        public virtual void Print()                                                                       // METOD PECHATI 
+        {
+           
+           
+            
+            while (true)
+            {
+                Console.Write("Введите фамилию студента :  ");
+                lastname = (Console.ReadLine());
+
+                if (!int.TryParse(lastname, out validation))  
+                {
+
+                    Console.WriteLine(lastname);
+                    break;
+                }
+                Console.WriteLine("Вы ввели числа. Ведите снова");
+
+
+            }
+
+
+
+            Console.Write("Курс обучения студента :  ");
+            Course = int.Parse(Console.ReadLine());
+
+            Console.Write("Номер зачетной книжки студента :  ");
+            numbook = int.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            Console.WriteLine($"Lastname of Student : {Lastname}  \nCourse : {Course}  \nNumber of Book : {numbook}\n");
+
+        }
 
     }
 
@@ -151,17 +199,62 @@ namespace zadacha6
             Disertation = disertation;
 
         }
-        public void PrintA()
+
+        public override void Print()
         {
-            Console.Write("Lastname of Student: ");
-            lastname = (Console.ReadLine());
-            Console.WriteLine("Course: ");
-            course = int.Parse(Console.ReadLine());
-            Console.WriteLine("Numbook: ");
-            numbook = int.Parse(Console.ReadLine());
+            while (true)
+            {
+                Console.Write("Введите фамилию аспиранта :  ");
+                lastname = (Console.ReadLine());
+
+                if (!int.TryParse(lastname, out validation))
+                {
+
+                    Console.WriteLine(lastname);
+                    break;
+                }
+                Console.WriteLine("Вы ввели числа. Ведите снова");
+
+            }
+
+            
+
+            Console.Write("Курс обучения аспиранта :  ");
+            Course = int.Parse(Console.ReadLine());
+
+            Console.Write("Номер зачетной книжки аспиранта :  ");
+            Numbook = int.Parse(Console.ReadLine());
+
+            Console.Write("Номер диссертации :  ");
+            Disertation = int.Parse(Console.ReadLine());
+
             Console.WriteLine();
+
+            Console.WriteLine($"Lastname of Aspirant : {Lastname}  \nCourse : {Course}  \nNumber of Book : {Numbook}  \nNum of Disertation : {Disertation}\n");
+
         }
-        
+
+
+    }
+
+    class University
+    {
+        private Student [] array = new Student[3];
+
+        public Student this [int index]
+        {
+            get 
+            {
+                return array[index];
+            }
+
+             set
+            {
+
+                array[index] = value;
+            }
+        }
+
 
     }
 
@@ -169,40 +262,9 @@ namespace zadacha6
 
     class zadacha6
     {
-
-        Student[] data;
-
-
         static void Main(string[] args)
         {
 
-            Student student1 = new Student();
-            Console.WriteLine("Инофомация о Первом студенте: ");
-            student1.PrintS();
-            Student student2 = new Student();
-            Console.WriteLine("Инофомация о Втором студенте: ");
-            student2.PrintS();
-            Student student3 = new Student();
-            Console.WriteLine("Инофомация о Третем студенте: ");
-            student3.PrintS();
-
-
-
-            Aspirant aspirant1 = new Aspirant();
-            Console.WriteLine("Инофомация о Первом Аспиранте: ");
-            aspirant1.PrintA();
-            Aspirant aspirant2 = new Aspirant();
-            Console.WriteLine("Инофомация о Втором Аспиранте: ");
-            aspirant2.PrintA();
-            Aspirant aspirant3 = new Aspirant();
-            Console.WriteLine("Инофомация о Третем Аспиранте: ");
-            aspirant3.PrintA();
-
-
-
-
-
-           
 
 
 
@@ -210,8 +272,69 @@ namespace zadacha6
 
 
 
+            Console.WriteLine("Добро пожаловать в Гарвард\n");
+            
 
 
+
+            while (true)
+            {
+
+
+                    do
+                    {
+
+                        Console.WriteLine("Код : 1 - Студенческий лагерь  \nКод: 2 - Лагерь аспирантов  ");
+                        int a = int.Parse(Console.ReadLine());
+
+
+                        if (a == 1)
+                        {
+                            Console.WriteLine("Добро пожаловать в Студенческий лагерь ");
+
+                            Student student1 = new Student();
+                            //Student student2 = new Student();
+                            //Student student3 = new Student();
+
+                            student1.Print();
+                        //student2.Print();
+                        //student3.Print();
+                        Console.WriteLine("Если нужна еще информация выберите пункт 1 или 2. Для выхода нажмите кнопку Х на правом верхнем углу");
+                        break;
+                        }
+                        else if (a == 2)
+                        {
+                            Console.WriteLine("Добро пожаловать в Лагерь Аспирантов");
+                            Aspirant aspirant1 = new Aspirant();
+                            //Aspirant aspirant2 = new Aspirant();
+                            //Aspirant aspirant3 = new Aspirant();
+
+                            aspirant1.Print();
+                        //aspirant2.Print();
+                        //aspirant3.Print();
+
+                        Console.WriteLine("Если нужна еще информация выберите пункт 1 или 2. Для выхода нажмите кнопку Х на правом верхнем углу");
+
+                        break;
+                           
+                        }
+
+                        else
+                        {
+
+                            Console.WriteLine("Введите снова");
+                        }
+
+
+                    //Console.WriteLine("Если нужна еще информация выберите пункт 1 или 2. Для выхода нажмите кнопку Х на правом верхнем углу");
+
+                    } while (true);
+
+                    //Console.WriteLine("Если нужна еще информация нажмите цифру 3");
+                //int ab = int.Parse(Console.ReadLine());
+
+
+            }
 
 
         }
