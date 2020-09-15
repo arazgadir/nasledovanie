@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace zadacha6
 {
@@ -113,11 +114,41 @@ namespace zadacha6
 
 
 
-            Console.Write("Курс обучения студента :  ");
-            Course = int.Parse(Console.ReadLine());
+            while (true)
+            {
 
-            Console.Write("Номер зачетной книжки студента :  ");
-            numbook = int.Parse(Console.ReadLine());
+
+                try
+                {
+                    Console.Write("Курс обучения студента :  ");
+                    Course = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("Пожалуйста введите только число");
+                }
+            }
+
+            while (true)
+            {
+
+
+                try
+                {
+                    Console.Write("Номер зачетной книжки студента :  ");
+                    Numbook = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("Пожалуйста введите только число");
+                }
+            }
+
+
 
             Console.WriteLine();
 
@@ -203,14 +234,62 @@ namespace zadacha6
 
             
 
-            Console.Write("Курс обучения аспиранта :  ");
-            Course = int.Parse(Console.ReadLine());
+            
+            while (true)
+            {
 
-            Console.Write("Номер зачетной книжки аспиранта :  ");
-            Numbook = int.Parse(Console.ReadLine());
 
-            Console.Write("Номер диссертации :  ");
-            Disertation = int.Parse(Console.ReadLine());
+                try
+                {
+                    Console.Write("Курс обучения аспиранта :  ");
+                    Course = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("Пожалуйста введите только число");
+                }
+            }
+
+            while (true)
+            {
+
+
+                try
+                {
+                    Console.Write("Номер зачетной книжки аспиранта :  ");
+                    Numbook = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("Пожалуйста введите только число");
+                }
+            }
+
+            while (true)
+            {
+
+
+                try
+                {
+                    Console.Write("Номер диссертации :  ");
+                    Disertation = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("Пожалуйста введите только число");
+                }
+            }
+
+
+
+
+            
 
             Console.WriteLine();
 
@@ -231,74 +310,62 @@ namespace zadacha6
 
 
             Console.WriteLine("Добро пожаловать в Гарвард\n");
-           
 
 
 
-                do
-                    {
+            do
+            {
 
-                try
-                {
+                
+                    Console.WriteLine("Код : 1 - Студенческий лагерь  \nКод: 2 - Лагерь аспирантов  ");
+                
+  
+                string selection = ( Console.ReadLine());
+                switch (selection)
 
-     
-                        Console.WriteLine("Код : 1 - Студенческий лагерь  \nКод: 2 - Лагерь аспирантов  ");
-                        int a = int.Parse(Console.ReadLine());
+
+             {
+   
+                    case "1":   
                         
+                        Console.WriteLine("Добро пожаловать в Студенческий лагерь ");
 
-                        if (a == 1)
-                        {
-                            Console.WriteLine("Добро пожаловать в Студенческий лагерь ");
+                        Student student1 = new Student();
+                        //Student student2 = new Student();
+                        //Student student3 = new Student();
 
-                            Student student1 = new Student();
-                            //Student student2 = new Student();
-                            //Student student3 = new Student();
-
-                            student1.Print();
+                        student1.Print();
                         //student2.Print();
                         //student3.Print();
                         Console.WriteLine("Если нужна еще информация выберите пункт 1 или 2. Для выхода нажмите кнопку Х на правом верхнем углу");
                         break;
-                        }
-                        else if (a == 2)
-                        {
-                            Console.WriteLine("Добро пожаловать в Лагерь Аспирантов");
-                            Aspirant aspirant1 = new Aspirant();
-                            //Aspirant aspirant2 = new Aspirant();
-                            //Aspirant aspirant3 = new Aspirant();
+                    
+                    case "2":
+                        
+                        Console.WriteLine("Добро пожаловать в Лагерь Аспирантов");
+                        Aspirant aspirant1 = new Aspirant();
+                        //Aspirant aspirant2 = new Aspirant();
+                        //Aspirant aspirant3 = new Aspirant();
 
-                            aspirant1.Print();
+                        aspirant1.Print();
                         //aspirant2.Print();
                         //aspirant3.Print();
-
                         Console.WriteLine("Если нужна еще информация выберите пункт 1 или 2. Для выхода нажмите кнопку Х на правом верхнем углу");
-
                         break;
-                           
-                        }
 
-                        else
-                        {
 
-                            Console.WriteLine("Введите снова. Нужно ввести 1 или 2");
-                        }
+                    default:
 
-                }
-                catch (Exception)
-                {
+                        Console.WriteLine("Нажмите на 1 или 2.");
+                        break;
 
-                    Console.WriteLine("Пожалуйста введите число 1 или 2");
-                }
+            }
 
 
 
+            }  while (true);
 
-
-
-            } while (true);
-
-            
-
+  
 
         }
     }
