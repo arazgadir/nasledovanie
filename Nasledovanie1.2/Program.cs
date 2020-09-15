@@ -238,9 +238,13 @@ namespace zadacha6
                 do
                     {
 
+                try
+                {
+
+     
                         Console.WriteLine("Код : 1 - Студенческий лагерь  \nКод: 2 - Лагерь аспирантов  ");
                         int a = int.Parse(Console.ReadLine());
-
+                        
 
                         if (a == 1)
                         {
@@ -276,11 +280,22 @@ namespace zadacha6
                         else
                         {
 
-                            Console.WriteLine("Введите снова");
+                            Console.WriteLine("Введите снова. Нужно ввести 1 или 2");
                         }
 
+                }
+                catch (Exception)
+                {
 
-                } while (true);
+                    Console.WriteLine("Пожалуйста введите число 1 или 2");
+                }
+
+
+
+
+
+
+            } while (true);
 
             
 
