@@ -23,9 +23,9 @@ namespace zadacha6
     class Student                                                                              // KLASS STUDENT
 
     {
-       public  string lastname;                                                                // POLYA 
+        private  string lastname;                                                                // POLYA 
 
-        public int course;
+        private int course;
 
         private int numbook;
 
@@ -70,24 +70,8 @@ namespace zadacha6
 
 
 
-        public int Numbook
-        {
-
-         set {
-
-                value = numbook;
-            }
-
-            get
-            {
-
-                return numbook;
-            }
-
-
-
-
-        }
+        public virtual int Numbook { get; set; }
+        
 
 
         public Student()
@@ -99,9 +83,9 @@ namespace zadacha6
         public Student(string lastname, int course, int numbook)                                        // KONSTRUKTOR STUDENTA 
         {
 
-           this.lastname = lastname;
+           Lastname = lastname;
            Course = course;
-           this.numbook = numbook;
+           Numbook = numbook;
         
         }
 
@@ -114,12 +98,12 @@ namespace zadacha6
             while (true)
             {
                 Console.Write("Введите фамилию студента :  ");
-                lastname = (Console.ReadLine());
+                Lastname = (Console.ReadLine());
 
-                if (!int.TryParse(lastname, out validation))  
+                if (!int.TryParse(Lastname, out validation))  
                 {
 
-                    Console.WriteLine(lastname);
+                    Console.WriteLine(Lastname);
                     break;
                 }
                 Console.WriteLine("Вы ввели числа. Ведите снова");
@@ -148,9 +132,9 @@ namespace zadacha6
     class Aspirant : Student                                                                                                           // KLASS ASPIRANT
     {
 
+        private int course;
 
-
-
+        public override int Numbook { get; set; }
         public int Disertation { get; set; }
 
         public override int Course
@@ -205,12 +189,12 @@ namespace zadacha6
             while (true)
             {
                 Console.Write("Введите фамилию аспиранта :  ");
-                lastname = (Console.ReadLine());
+                Lastname = (Console.ReadLine());
 
-                if (!int.TryParse(lastname, out validation))
+                if (!int.TryParse(Lastname, out validation))
                 {
 
-                    Console.WriteLine(lastname);
+                    Console.WriteLine(Lastname);
                     break;
                 }
                 Console.WriteLine("Вы ввели числа. Ведите снова");
@@ -237,26 +221,6 @@ namespace zadacha6
 
     }
 
-    class University
-    {
-        private Student [] array = new Student[3];
-
-        public Student this [int index]
-        {
-            get 
-            {
-                return array[index];
-            }
-
-             set
-            {
-
-                array[index] = value;
-            }
-        }
-
-
-    }
 
 
 
@@ -266,22 +230,12 @@ namespace zadacha6
         {
 
 
-
-
-
-
-
-
             Console.WriteLine("Добро пожаловать в Гарвард\n");
-            
+           
 
 
 
-            while (true)
-            {
-
-
-                    do
+                do
                     {
 
                         Console.WriteLine("Код : 1 - Студенческий лагерь  \nКод: 2 - Лагерь аспирантов  ");
@@ -326,15 +280,9 @@ namespace zadacha6
                         }
 
 
-                    //Console.WriteLine("Если нужна еще информация выберите пункт 1 или 2. Для выхода нажмите кнопку Х на правом верхнем углу");
+                } while (true);
 
-                    } while (true);
-
-                    //Console.WriteLine("Если нужна еще информация нажмите цифру 3");
-                //int ab = int.Parse(Console.ReadLine());
-
-
-            }
+            
 
 
         }
